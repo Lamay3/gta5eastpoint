@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 9% 4%;
+    --foreground: 0 0% 88%;
+    --card: 240 7% 8%;
+    --card-foreground: 0 0% 88%;
+    --popover: 240 7% 8%;
+    --popover-foreground: 0 0% 88%;
+    --primary: 183 100% 50%;
+    --primary-foreground: 240 9% 4%;
+    --secondary: 240 7% 12%;
+    --secondary-foreground: 0 0% 88%;
+    --muted: 240 7% 12%;
+    --muted-foreground: 0 0% 55%;
+    --accent: 271 76% 53%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 7% 16%;
+    --input: 240 7% 16%;
+    --ring: 183 100% 50%;
+    --surface: 240 7% 8%;
+    --accent-cyan: 183 100% 50%;
+    --accent-ice: 189 100% 70%;
+    --accent-violet: 271 76% 53%;
+    --radius: 0.25rem;
+    --font-heading: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+    --font-body: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    --sidebar-background: 240 7% 8%;
+    --sidebar-foreground: 0 0% 88%;
+    --sidebar-primary: 183 100% 50%;
+    --sidebar-primary-foreground: 240 9% 4%;
+    --sidebar-accent: 240 7% 12%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 240 7% 16%;
+    --sidebar-ring: 183 100% 50%;
+  }
+
+  .dark {
+    --background: 240 9% 4%;
+    --foreground: 0 0% 88%;
+    --card: 240 7% 8%;
+    --card-foreground: 0 0% 88%;
+    --popover: 240 7% 8%;
+    --popover-foreground: 0 0% 88%;
+    --primary: 183 100% 50%;
+    --primary-foreground: 240 9% 4%;
+    --secondary: 240 7% 12%;
+    --secondary-foreground: 0 0% 88%;
+    --muted: 240 7% 12%;
+    --muted-foreground: 0 0% 55%;
+    --accent: 271 76% 53%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 7% 16%;
+    --input: 240 7% 16%;
+    --ring: 183 100% 50%;
+    --surface: 240 7% 8%;
+    --accent-cyan: 183 100% 50%;
+    --accent-ice: 189 100% 70%;
+    --accent-violet: 271 76% 53%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+}
+
+@layer utilities {
+  .neon-glow {
+    box-shadow: 0 0 20px hsl(var(--accent-cyan) / 0.35), 0 0 50px hsl(var(--accent-cyan) / 0.12);
+  }
+  .neon-glow-violet {
+    box-shadow: 0 0 20px hsl(var(--accent-violet) / 0.35), 0 0 50px hsl(var(--accent-violet) / 0.12);
+  }
+  .neon-text {
+    text-shadow: 0 0 12px hsl(var(--accent-cyan) / 0.55);
+  }
+  .glass {
+    background: hsl(var(--surface) / 0.8);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid hsl(var(--border));
+  }
+  .grid-bg {
+    background-image:
+      linear-gradient(hsl(var(--border) / 0.35) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--border) / 0.35) 1px, transparent 1px);
+    background-size: 52px 52px;
+  }
+  .scanline {
+    background: repeating-linear-gradient(
+      0deg,
+      transparent 0px,
+      transparent 3px,
+      hsl(var(--accent-cyan) / 0.03) 3px,
+      hsl(var(--accent-cyan) / 0.03) 4px
+    );
+  }
+  .pill-slant {
+    border-radius: 9999px 0 0 9999px;
+    transform: skewX(-10deg);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .pill-slant:hover {
+    transform: skewX(-10deg) translateX(3px);
+    box-shadow: 0 0 28px hsl(var(--accent-ice) / 0.45);
+  }
+  .watermark-text {
+    -webkit-text-stroke: 1px hsl(var(--foreground) / 0.045);
+    color: transparent;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: hsl(var(--accent-cyan) / 0.3);
+  color: hsl(var(--foreground));
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--accent-cyan) / 0.5);
+}

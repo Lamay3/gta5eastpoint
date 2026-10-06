@@ -1,0 +1,64 @@
+{
+  "name": "ServerConfig",
+  "type": "object",
+  "properties": {
+    "server_name": {
+      "type": "string",
+      "title": "Nume server",
+      "default": "NEON CORTEX"
+    },
+    "tagline": {
+      "type": "string",
+      "title": "Slogan",
+      "default": "Digital Urban Sprawl"
+    },
+    "logo_url": {
+      "type": "string",
+      "title": "Logo URL"
+    },
+    "fivem_address": {
+      "type": "string",
+      "title": "Adres\u0103 conectare FiveM",
+      "description": "Ex: connect cfx.re/join/abc123"
+    },
+    "status_host": {
+      "type": "string",
+      "title": "Host status API",
+      "description": "IP sau domeniu server FiveM pentru status"
+    },
+    "status_port": {
+      "type": "string",
+      "title": "Port status API",
+      "description": "Port HTTP FiveM (de obicei portul jocului + 1 sau direct)"
+    },
+    "started_at": {
+      "type": "string",
+      "title": "Data pornire server",
+      "format": "date-time"
+    },
+    "next_restart_at": {
+      "type": "string",
+      "title": "Urm\u0103torul restart",
+      "format": "date-time"
+    },
+    "discord_url": {
+      "type": "string",
+      "title": "Discord URL"
+    },
+    "instagram_url": {
+      "type": "string",
+      "title": "Instagram URL"
+    },
+    "youtube_url": {
+      "type": "string",
+      "title": "YouTube URL"
+    },
+    "tiktok_url": {
+      "type": "string",
+      "title": "TikTok URL"
+    }
+  },
+  "required": [
+    "server_name"
+  ]
+}

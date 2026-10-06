@@ -1,0 +1,67 @@
+{
+  "name": "StaffApplication",
+  "type": "object",
+  "properties": {
+    "alias": {
+      "type": "string",
+      "title": "Numele de scen\u0103 / Alias",
+      "description": "Aliasul folosit \u00een joc"
+    },
+    "ore_jucate": {
+      "type": "number",
+      "title": "Ore jucate pe server",
+      "description": "Num\u0103rul de ore jucate"
+    },
+    "server_id": {
+      "type": "string",
+      "title": "ID Server",
+      "description": "Identitatea digital\u0103 din joc"
+    },
+    "motivatie": {
+      "type": "string",
+      "title": "Motiva\u021bie",
+      "description": "Motiva\u021bia al\u0103tur\u0103rii departamentului"
+    },
+    "disponibilitate": {
+      "type": "string",
+      "title": "Disponibilitate",
+      "enum": [
+        "Diminea\u021ba (06:00-12:00)",
+        "Dup\u0103-amiaza (12:00-18:00)",
+        "Seara (18:00-00:00)",
+        "Noaptea (00:00-06:00)",
+        "Flexible / Oric\u00e2nd"
+      ]
+    },
+    "departament": {
+      "type": "string",
+      "title": "Departament dorit",
+      "enum": [
+        "Staff",
+        "Moderator",
+        "Admin",
+        "Support",
+        "Developer"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "title": "Status",
+      "enum": [
+        "pending",
+        "review",
+        "accepted",
+        "rejected"
+      ],
+      "default": "pending"
+    }
+  },
+  "required": [
+    "alias",
+    "ore_jucate",
+    "server_id",
+    "motivatie",
+    "disponibilitate",
+    "departament"
+  ]
+}

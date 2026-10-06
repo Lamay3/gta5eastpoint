@@ -1,0 +1,43 @@
+{
+  "name": "Rule",
+  "type": "object",
+  "properties": {
+    "cod": {
+      "type": "string",
+      "title": "Cod regul\u0103",
+      "description": "Ex: RULE_01"
+    },
+    "titlu": {
+      "type": "string",
+      "title": "Titlu"
+    },
+    "continut": {
+      "type": "string",
+      "title": "Con\u021binut",
+      "description": "Textul regulii"
+    },
+    "categorie": {
+      "type": "string",
+      "title": "Categorie",
+      "enum": [
+        "Generale",
+        "Roleplay",
+        "Combat",
+        "Chat & Voice",
+        "Sanc\u021biuni",
+        "Technical"
+      ],
+      "default": "Generale"
+    },
+    "ordine": {
+      "type": "number",
+      "title": "Ordine",
+      "default": 0
+    }
+  },
+  "required": [
+    "cod",
+    "titlu",
+    "continut"
+  ]
+}
